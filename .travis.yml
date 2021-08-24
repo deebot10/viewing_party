@@ -1,6 +1,6 @@
 language: ruby
 rbenv:
-- 2.5.3
+- 2.7.2
 addons:
   postgresql: 9.6
 script:
@@ -8,8 +8,7 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key: yJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZDE5ZTBlOWRiYWFlZjhjMDQyNDU4N2FiNmYzNGI0ZiIsInN1YiI6IjYxMjQyZDkwNmY1M2UxMDA1YzlhNWU2NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Cin4uvxNUc7ZNzMntJ7inEwbV0awkK8SMeAY9gKBLz4 
+  api_key: yJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZDE5ZTBlOWRiYWFlZjhjMDQyNDU4N2FiNmYzNGI0ZiIsInN1YiI6IjYxMjQyZDkwNmY1M2UxMDA1YzlhNWU2NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Cin4uvxNUc7ZNzMntJ7inEwbV0awkK8SMeAY9gKBLz4
   app: intense-meadow-79171
   run: rails db:migrate
   skip_cleanup: true
-
