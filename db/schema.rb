@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_005141) do
+ActiveRecord::Schema.define(version: 2021_08_24_202635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,23 @@ ActiveRecord::Schema.define(version: 2021_08_24_005141) do
   end
 
   create_table "invitations", force: :cascade do |t|
-    t.bigint "viewing_party_id"
+    t.bigint "user_id"
+    t.bigint "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_invitations_on_party_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string "movie_title"
+    t.integer "duration"
+    t.string "date"
+    t.time "start_time"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_invitations_on_user_id"
-    t.index ["viewing_party_id"], name: "index_invitations_on_viewing_party_id"
+    t.index ["user_id"], name: "index_parties_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,19 +52,8 @@ ActiveRecord::Schema.define(version: 2021_08_24_005141) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "viewing_parties", force: :cascade do |t|
-    t.string "movie_title"
-    t.integer "duration"
-    t.string "date"
-    t.time "start_time"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_viewing_parties_on_user_id"
-  end
-
   add_foreign_key "friendships", "users"
+  add_foreign_key "invitations", "parties"
   add_foreign_key "invitations", "users"
-  add_foreign_key "invitations", "viewing_parties"
-  add_foreign_key "viewing_parties", "users"
+  add_foreign_key "parties", "users"
 end
