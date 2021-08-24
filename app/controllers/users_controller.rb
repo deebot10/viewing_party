@@ -7,13 +7,13 @@ class UsersController < ApplicationController
     user = user_params
     user[:email] = user[:email].downcase
     new_user = User.create(user)
+    session[:user_id] = new_user.id
     flash[:success] = "Welcome, #{new_user.username}!"
     redirect_to dashboard_path
   end
 
   def show
-    @user = User.new
-    @user.current_user = current_user
+    @user = User.find(current_user.id)
   end
 
   private
