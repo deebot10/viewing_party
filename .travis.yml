@@ -8,8 +8,8 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key:
-  app:
+  api_key: yJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZDE5ZTBlOWRiYWFlZjhjMDQyNDU4N2FiNmYzNGI0ZiIsInN1YiI6IjYxMjQyZDkwNmY1M2UxMDA1YzlhNWU2NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Cin4uvxNUc7ZNzMntJ7inEwbV0awkK8SMeAY9gKBLz4 
+  app: intense-meadow-79171
   run: rails db:migrate
   skip_cleanup: true
 
