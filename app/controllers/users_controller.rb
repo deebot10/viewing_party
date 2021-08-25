@@ -9,11 +9,12 @@ class UsersController < ApplicationController
     new_user = User.create(user)
     session[:user_id] = new_user.id
     flash[:success] = "Welcome, #{new_user.username}!"
-    redirect_to dashboard_path
+    redirect_to dashboard_user_path(new_user)
   end
 
-  def show
-    @user = User.find(current_user.id)
+  def dashboard
+    @user = User.find(params[:id])
+    # @user = current_user
   end
 
   private
