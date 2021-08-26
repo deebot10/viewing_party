@@ -1,8 +1,7 @@
-class ApiService 
-  @key = 'bd19e0e9dbaaef8c0424587ab6f34b4f'
+class ApiService
 
   def parse_data(url)
-    farday = Faraday.new(url) 
+    farday = Faraday.new(url)
   end
 
   def parse_json(response)

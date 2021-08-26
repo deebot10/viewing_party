@@ -7,14 +7,18 @@ class UsersController < ApplicationController
     user = user_params
     user[:email] = user[:email].downcase
     new_user = User.create(user)
-    session[:user_id] = new_user.id
-    flash[:success] = "Welcome, #{new_user.username}!"
-    redirect_to dashboard_user_path(new_user)
+    if new_user.save
+      session[:user_id] = new_user.id
+      flash[:success] = "Welcome, #{new_user.username}!"
+      redirect_to dashboard_path
+    else
+      flash[:failure] = 'Something went horribly wrong!'
+      render :new
+    end
   end
 
-  def dashboard
-    @user = User.find(params[:id])
-    # @user = current_user
+  def show
+    @user = User.find(session[:user_id])
   end
 
   private
