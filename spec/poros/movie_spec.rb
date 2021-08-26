@@ -9,7 +9,6 @@ RSpec.describe Movie do
                cast: [{name: "Edward Norton", character: "The Narrator"}, {name: "Brad Pitt", character: "Tyler Durden"}],
                reviews: [{author: "Goddard", review: "Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden."}, {author: "Brett Pascoe", review: "In my top 5 of all time favourite movies. Great story line and a movie you can watch over and over again."}],
                id: '550',
-               genres: ['Drama'],
                runtime: '139'})
     expect(movie).to be_a(Movie)
     expect(movie.title).to eq('Fight Club')
