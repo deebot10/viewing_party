@@ -18,8 +18,8 @@ RSpec.describe 'User dashboard' do
       expect(page).to have_link('Discover Movies')
 
       click_on 'Discover Movies'
-      
-      expect(current_path).to eq(user_discover_index_path(@user))
+
+      expect(current_path).to eq(users_discover_path(@users))
     end
   end
 end
