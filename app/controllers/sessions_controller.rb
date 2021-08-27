@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-
     found_user = User.find_by(email: params[:email])
     if found_user.authenticate(params[:password])
       session[:user_id] = found_user.id
@@ -13,10 +12,10 @@ class SessionsController < ApplicationController
       flash[:failure] = "Credentials were bad. Try again."
       redirect_to login_path
     end
-    # require 'pry'; binding.pry
   end
 
   def show
+    require "pry"; binding.pr
     @user = User.find(session[:user_id])
   end
 

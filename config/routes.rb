@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   get '/discover', to: 'discover#show'
+
   resources :movies, only: [:index, :show]
   resources :friendships, only: :create
+
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get '/logout', to: 'sessions#destroy'

@@ -16,5 +16,8 @@ RSpec.describe Movie do
     expect(movie.id).to eq('550')
     expect(movie.rating).to eq('8.4')
     expect(movie.runtime).to eq('139')
+    expect(movie.genres).to eq(["Drama"])
+    expect(movie.cast).to eq([{name: "Edward Norton", character: "The Narrator"}, {name: "Brad Pitt", character: "Tyler Durden"}])
+    expect(movie.reviews).to eq([{author: "Goddard", review: "Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden."}, {author: "Brett Pascoe", review: "In my top 5 of all time favourite movies. Great story line and a movie you can watch over and over again."}])
   end
 end
