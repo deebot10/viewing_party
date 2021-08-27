@@ -12,16 +12,16 @@ RSpec.describe 'User dashboard' do
       # fill_in :password, with: @user.password
       #
       # click_on "Log In"
+      @user = User.create(username: 'test_user', email: 'user@test.com', password: 'test_password')
+      @user.authenticate(@user.password)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
+      visit dashboard_user_path(@user)
     end
 
     it 'displays a welcome message' do
-      user = User.create(username: 'test_user', email: 'user@test.com', password: 'test_password')
-      user.authenticate(user.password)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit dashboard_path(user)
-
-      expect(page).to have_content("Welcome #{user.username}!")
+      expect(page).to have_content("Welcome #{@user.username}!")
     end
 
     it 'displays a link to discover movies' do
@@ -29,7 +29,7 @@ RSpec.describe 'User dashboard' do
 
       click_on 'Discover Movies'
 
-      expect(current_path).to eq('/discover')
+      expect(current_path).to eq(discover_path)
     end
   end
 

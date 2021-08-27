@@ -9,18 +9,24 @@ class UsersController < ApplicationController
     new_user = User.create(user)
     if new_user.save
       session[:user_id] = new_user.id
-      flash[:success] = "Welcome, #{new_user.username}!"
-      redirect_to dashboard_path
+      flash[:success] = "Sign-up Successful!"
+      redirect_to dashboard_user_path(new_user)
     else
       flash[:failure] = 'Something went horribly wrong!'
       render :new
     end
   end
 
+  def dashboard
+    @user = User.find(params[:id])
+    # require "pry"; binding.pry
+  end
+
 
   private
 
   def user_params
+    # require 'pry'; binding.pry
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end
