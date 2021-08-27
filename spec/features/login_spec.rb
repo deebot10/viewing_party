@@ -20,7 +20,6 @@ RSpec.describe "Logging In" do
     expect(page).to have_content("Welcome, #{user.username}")
     expect(page).to_not have_link("I already have an account")
     expect(page).to_not have_link("Register as a User")
-    save_and_open_page
     expect(page).to have_link("Log Out")
   end
 end

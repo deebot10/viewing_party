@@ -3,10 +3,13 @@ require 'rails_helper'
 RSpec.describe 'User dashboard' do
   describe 'As an authenticated user' do
     before :each do
-      @user = User.create!(username: 'test_user', email: 'user@test.com', password: 'test_password')
-      @user.authenticate(@user.password)
+      @user = User.create(username: 'test_user', email: 'user@test.com', password: 'test_password')
+      visit login_path
 
-      visit dashboard_path(@user)
+      fill_in :email, with: @user.email
+      fill_in :password, with: @user.password
+
+      click_on "Log In"
     end
 
     it 'displays a welcome message' do
@@ -18,7 +21,7 @@ RSpec.describe 'User dashboard' do
 
       click_on 'Discover Movies'
 
-      expect(current_path).to eq(users_discover_path(@users))
+      expect(current_path).to eq('/discover')
     end
   end
 

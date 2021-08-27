@@ -1,8 +1,0 @@
-<h1>Welcome <%= @user.username%>!</h1>
-
-<%= link_to 'Discover Movies', users_discover_path(@users) %>
-
-<% if current_user %>
-  <p>Logged in as <%= current_user.username %></p>
-  <%= link_to "Log Out", logout_path%>
-<% end %>
