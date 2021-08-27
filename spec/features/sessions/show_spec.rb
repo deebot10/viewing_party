@@ -18,15 +18,17 @@ RSpec.describe 'User dashboard' do
 
     it 'displays a link to discover movies' do
       expect(page).to have_link('Discover Movies')
-
+      
       click_on 'Discover Movies'
-
+      
       expect(current_path).to eq('/discover')
     end
   end
-
+  
   describe 'friends section' do
     it 'displays a message if user has no friends' do
+
+      # visit dashboard_path 
       expect(page).to have_content("You currently have no friends")
     end
 
@@ -38,7 +40,6 @@ RSpec.describe 'User dashboard' do
 
       fill_in :email, with: user_2.email
       click_on 'Add Friend'
-
       expect(page).to have_content(user_2.username)
       expect(page).not_to have_content(user_3.username)
     end
