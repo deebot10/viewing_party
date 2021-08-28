@@ -1,0 +1,10 @@
+<h1>Welcome to Viewing Party</h1>
+<p>Viewing Party is an application to explore movies and create a viewing party event for you and your friends to watch a movie together.</p><br>
+
+<% if current_user %>
+  <p>Logged in as <%= current_user.email %></p>
+  <%= link_to "Log Out", logout_path%>
+<% else %>
+  <%= link_to 'Register as a User', '/registration', class: 'btn btn-outline-primary' %>
+  <%= link_to 'I already have an account', login_path, class: 'btn btn-outline-success' %>
+<% end %>
