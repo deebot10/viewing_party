@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find(params[:id])
-    # require "pry"; binding.pry
   end
 
 

@@ -1,4 +1,4 @@
-<h1>Welcome <%= @user.username%>!</h1>
+<h1>Welcome, <%= @user.username%>!</h1>
 
 <%= link_to 'Discover Movies', discover_path %>
 
@@ -15,12 +15,11 @@
 <% end %>
 
 
-<h4>Friends</h4>
-<% if @user.friends.present? %>
-  <% @user.friends.each do |friend|%>
-    <p><%= friend.username%></p>
-    <%end%>
-<% else%>
-  <h5>You currently have no friends</h5>
-
-<%end%>
+  <h4>Friends</h4>
+  <% if @user.friends.present? %>
+    <% @user.friends.each do |friend|%>
+      <p><%= friend.username%></p>
+      <%end%>
+  <% else%>
+    <h5>You currently have no friends</h5>
+  <%end%>

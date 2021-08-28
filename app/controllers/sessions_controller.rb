@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    redirect_to dashboard_user_path(current_user), notice: 'Your already logged in' if current_user 
+    redirect_to dashboard_user_path(current_user), notice: 'Your already logged in' if current_user
   end
 
   def create
@@ -15,13 +15,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  # def show
-  #   require "pry"; binding.pr
-  #   @user = User.find(session[:user_id])
-  # end
-
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "You've been logged out" 
+    redirect_to root_path, notice: "You've been logged out"
   end
 end
