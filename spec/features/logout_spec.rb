@@ -19,5 +19,6 @@ RSpec.describe "Logging In" do
     expect(page).to have_link("I already have an account")
     expect(page).to have_link("Register as a User")
     expect(page).to_not have_link("Log Out")
+    expect(page).to_not have_link("You've been logged out")
   end
 end

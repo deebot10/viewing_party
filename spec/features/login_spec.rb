@@ -22,4 +22,19 @@ RSpec.describe "Logging In" do
     expect(page).to_not have_link("Register as a User")
     expect(page).to have_link("Log Out")
   end
+
+  it "can not log in with invalid credentials" do
+    visit root_path
+
+    click_on "I already have an account"
+
+    expect(current_path).to eq(login_path)
+
+    fill_in :email, with: 'invalid@email.com'
+    fill_in :password, with: 'invalid_password'
+
+    click_on "Log In"
+
+    expect(page).to have_content("Credentials were bad. Try again.")
+  end
 end

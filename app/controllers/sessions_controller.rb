@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     found_user = User.find_by(email: params[:email].downcase)
-    if found_user.authenticate(params[:password]) && found_user
+    if found_user && found_user.authenticate(params[:password])
       session[:user_id] = found_user.id
       flash[:success] = "Welcome, #{found_user.username}!"
       redirect_to dashboard_user_path(found_user)
