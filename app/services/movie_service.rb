@@ -10,20 +10,21 @@ class MovieService < ApiService
   def list_popular_movies(page)
     response = parse_data("https://api.themoviedb.org/3/movie/top_rated").get do |f|
       f.params['api_key'] = ENV['movie_key']
+      f.params['language'] = 'en'
       f.params['page'] = page
     end
     parse_json(response)[:results]
   end
 
-  def list_movie_search(title)
-    response = parse_data("https://api.themoviedb.org/3/movie").get do |f|
+  def movie_search(search)
+    response = parse_data("https://api.themoviedb.org/3/search/movie").get do |f|
       f.params['api_key'] = ENV['movie_key']
       f.params['language'] = 'en'
       f.params['include_adult'] = false
       f.params['page'] = 1
-      f.params['query'] = title
+      f.params['query'] = search
     end
-    parse_json(response)
+    parse_json(response)[:results]
   end
 
   def list_cast_members(movie_id)

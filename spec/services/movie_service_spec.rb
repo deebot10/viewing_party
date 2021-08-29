@@ -26,10 +26,10 @@ RSpec.describe MovieService do
         end
       end
 
-      describe '#list_movie_search' do
+      describe '#movie_search' do
         it 'returns a list of movies' do
-          expect(@service.list_movie_search('fight club').class).to eq(Hash)
-          expect(@service.list_movie_search('fight club').count).to eq(3)
+          expect(@service.movie_search('fight club').class).to eq(Hash)
+          expect(@service.movie_search('fight club').count).to eq(4)
         end
       end
 
