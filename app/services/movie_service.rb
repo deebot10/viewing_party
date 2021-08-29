@@ -24,7 +24,7 @@ class MovieService < ApiService
       f.params['page'] = 1
       f.params['query'] = search
     end
-    parse_json(response)
+    parse_json(response)[:results]
   end
 
   def list_cast_members(movie_id)
