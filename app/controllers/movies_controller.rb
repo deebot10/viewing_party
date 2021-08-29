@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = MovieFacade.new.create_movie(params[:movie_id])
+    @movie = MovieFacade.new.create_movie(params[:id])
+    require "pry"; binding.pry
   end
 end

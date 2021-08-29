@@ -28,8 +28,8 @@ RSpec.describe MovieService do
 
       describe '#movie_search' do
         it 'returns a list of movies' do
-          expect(@service.movie_search('fight club').class).to eq(Hash)
-          expect(@service.movie_search('fight club').count).to eq(4)
+          expect(@service.movie_search('fight club').class).to eq(Array)
+          expect(@service.movie_search('fight club').count).to eq(20)
         end
       end
 
