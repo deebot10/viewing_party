@@ -1,0 +1,21 @@
+<h3>Welcome <%= current_user.username%>! </h3>
+
+<h1><%= @movie.title%></h1>
+
+<h5>Vote Average: <%= @movie.rating%></h5>
+<h5>Runtime: <%= @movie.runtime%></h5>
+<h5>Genre(s): <%= @movie.genres.join(', ')%></h5>
+
+<h5>Summary: </h5>
+<p><%= @movie.description%></p>
+
+<h5>Cast: </h5>
+<p><%= @movie.cast.map {|member| member[:name] }.join(', ')%></p>
+
+<h5> <%= "#{@movie.reviews.count} Reviews" %> </h5>
+
+<% @movie.reviews.map do |review| %>
+  <p>Author: <%=review[:author]%><p> 
+  <p>Review: <%= review[:review]%></p>
+<%end%>
+
