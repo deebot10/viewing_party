@@ -1,6 +1,4 @@
 class FriendshipsController < ApplicationController
-
-
   def create
     friend = User.find_by(email: params[:email])
     if friend && assess_friendship(friend) == false

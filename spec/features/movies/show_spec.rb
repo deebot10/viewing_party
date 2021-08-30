@@ -20,6 +20,14 @@ RSpec.describe 'Movie Show Page' do
     expect(page).to have_content('Edward Norton, Brad Pitt, Helena Bonham Carter, Meat Loaf, Jared Leto, Zach Grenier, Holt McCallany, Eion Bailey, Richmond Arquette, David Andrews')
     expect(page).to have_content('7 Reviews')
     expect(page).to have_content('Review: Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.')
+  end
+
+  it 'has a button to create a viewing party' do
+
     expect(page).to have_button('Create Viewing Party for Movie')
+
+    click_button 'Create Viewing Party for Movie'
+
+    expect(current_path).to eq(new_party_path(@user))
   end
 end
