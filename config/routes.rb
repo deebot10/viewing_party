@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create] do
     member { get 'dashboard' }
-    member { get 'viewing_party' }
+    member { get 'party' }
   end
 
   get '/discover/', to: 'discover#show'
