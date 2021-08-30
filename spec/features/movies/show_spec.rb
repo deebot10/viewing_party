@@ -10,7 +10,7 @@ RSpec.describe 'Movie Show Page' do
   end
 
   it 'Displays the movies and all movie attributes' do
-  
+    
     expect(page).to have_content("Welcome #{@user.username}!")
     expect(page).to have_content('Fight Club')
     expect(page).to have_content('Vote Average: 8.4')
@@ -20,5 +20,6 @@ RSpec.describe 'Movie Show Page' do
     expect(page).to have_content('Edward Norton, Brad Pitt, Helena Bonham Carter, Meat Loaf, Jared Leto, Zach Grenier, Holt McCallany, Eion Bailey, Richmond Arquette, David Andrews')
     expect(page).to have_content('7 Reviews')
     expect(page).to have_content('Review: Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.')
+    expect(page).to have_button('Create Viewing Party for Movie')
   end
 end
