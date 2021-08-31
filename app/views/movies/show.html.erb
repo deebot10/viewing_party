@@ -19,5 +19,5 @@
   <p>Review: <%= review[:review]%></p>
 <%end%>
 
-<%= button_to 'Create Viewing Party for Movie', new_party_path(current_user), params: {movie_id: @movie.id}, method: :get %>
+<%= button_to 'Create Viewing Party for Movie', new_user_party_path(current_user), params: {movie_id: @movie.id}, method: :get %>
 

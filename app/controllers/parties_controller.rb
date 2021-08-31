@@ -1,4 +1,4 @@
-class PartyController < ApplicationController
+class PartiesController < ApplicationController
   def new
     @friends = current_user.friends
     @movie = MovieFacade.new.create_movie(params[:movie_id])

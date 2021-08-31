@@ -15,9 +15,6 @@ RSpec.describe 'Viewing Party form' do
     @user.friends << @user_2
     @user.friends << @user_3
 
-    # allow_any_instance_of(MovieFacade).to receive(:create_movie).and_return(@movie)
-    # require 'pry'; binding.pry    
-    # @movie = Movie.new(orginal_title: 'Fight Club', overview: 'great', vote_average: 10, genres: ['action'], cast: ['me', 'you', 'i'], reviews: 'Great', runtime: 100, id: 1)
     visit movie_path(550)
 
     click_on 'Create Viewing Party for Movie'
@@ -25,7 +22,7 @@ RSpec.describe 'Viewing Party form' do
   
   describe 'Form to create party' do
     it 'has a viewing party attributes' do
-      expect(current_path).to eq(new_party_path(@user))
+      expect(current_path).to eq(new_user_party_path(@user))
       expect(page).to have_content("Welcome #{@user.username}!")
 
       expect(page).to have_content('Fight Club')

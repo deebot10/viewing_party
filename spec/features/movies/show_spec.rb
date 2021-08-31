@@ -28,6 +28,6 @@ RSpec.describe 'Movie Show Page' do
 
     click_button 'Create Viewing Party for Movie'
 
-    expect(current_path).to eq(new_party_path(@user))
+    expect(current_path).to eq(new_user_party_path(@user))
   end
 end

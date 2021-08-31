@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create] do
     member { get 'dashboard' }
-    member { resources :party, only: [:new, :create]}
+    resources :parties, only: [:new, :create] 
+    # member { resources :party, only: [:new, :create]}
   end
   
   # get '/parties/new', to: 'party#new', as: :new_parties
