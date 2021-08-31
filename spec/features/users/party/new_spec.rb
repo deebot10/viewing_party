@@ -9,7 +9,7 @@ RSpec.describe 'Viewing Party form' do
     @user_2 = User.create(username: 'test_user_2', email: 'user2', password: 'test')
     @user_2.authenticate(@user_2.password)
     
-    @user_3 = User.create(username: 'test_user_3', email: 'user', password: 'test')
+    @user_3 = User.create(username: 'test_user_3', email: 'user3', password: 'test')
     @user_3.authenticate(@user_3.password)
     
     @user.friends << @user_2
@@ -29,6 +29,18 @@ RSpec.describe 'Viewing Party form' do
       expect(page).to have_content("Welcome #{@user.username}!")
 
       expect(page).to have_content('Fight Club')
+      expect(page).to have_content(@user_2.username)
+      expect(page).to have_content(@user_3.username)
+    end
+
+    it 'can create a party' do
+
+      fill_in :duration, with: 102
+      fill_in :day, with: '8/30/21'
+      fill_in :start_time, with: '8:00pm'
+      click_on 'Create Party'
+
+      expect(current_path).to eq(dashboard_user_path(@user))
     end
   end
 end

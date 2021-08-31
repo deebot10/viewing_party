@@ -2,8 +2,9 @@
 
 <h3>Viewing Party Details</h3>
 
-<%= form_with url: dashboard_user_path, method: :post, local: true do |form| %>
+<%= form_with url: party_index_path(current_user), local: true, method: :post do |form| %>
   
+  <%= form.hidden_field :title, value: @movie.title %>
   <%= form.hidden_field :movie_id, value: @movie.id %>
   <%= form.hidden_field :user_id, value: current_user.id %>
   <br>

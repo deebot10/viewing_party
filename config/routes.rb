@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member { get 'dashboard' }
     member { resources :party, only: [:new, :create]}
   end
+  
+  # get '/parties/new', to: 'party#new', as: :new_parties
+  # post '/parties', to: 'party#create'
 
   get '/discover/', to: 'discover#show'
 
