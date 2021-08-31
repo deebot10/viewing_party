@@ -23,10 +23,10 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 
 ## Contributors
 
-👤  **Ezzedine Alwafai**
-- [GitHub](https://github.com/ealwafai)
-- [LinkedIn](https://www.linkedin.com/in/ezzedine-alwafai/)
-
 👤  **Dee Hill**
 - [GitHub](https://github.com/deebot10)
 - [LinkedIn](https://www.linkedin.com/in/dee-hill/)
+
+👤  **Ezzedine Alwafai**
+- [GitHub](https://github.com/ealwafai)
+- [LinkedIn](https://www.linkedin.com/in/ezzedine-alwafai/)
