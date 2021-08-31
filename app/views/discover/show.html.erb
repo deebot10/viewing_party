@@ -1,7 +1,9 @@
+<div class="text-center mt-3">
 <%= button_to "Discover Top 40 Movies", movies_path, :params => { :top_movies => true }, method: :get, local: true, class: 'btn btn-outline-secondary' %>
-
+<br><br><br><br><br><br><br><br><br><br>
 <%= form_with url: movies_path, method: :get, local: true do |f| %>
   <%= f.label :search, 'Search by title' %>
   <%= f.text_field :search %>
   <%= f.submit 'Search', class: 'btn btn-outline-primary' %>
 <% end %>
+</div>
