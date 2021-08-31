@@ -5,11 +5,11 @@ class PartiesController < ApplicationController
   end
 
   def create
-    # require 'pry'; binding.pry
     party = Party.new(party_params)
     movie = MovieFacade.new.create_movie(params[:movie_id])
     # require 'pry'; binding.pry
     if party.save
+      require 'pry'; binding.pry
       redirect_to dashboard_user_path(current_user)      
     else  
       flash[:error] = 'Fields missing'
