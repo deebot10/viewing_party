@@ -1,5 +1,4 @@
 class MovieService < ApiService
-
   def get_movie(movie_id)
     response = parse_data("https://api.themoviedb.org/3/movie/#{movie_id}").get do |f|
       f.params['api_key'] = ENV['movie_key']
@@ -8,7 +7,7 @@ class MovieService < ApiService
   end
 
   def list_popular_movies(page)
-    response = parse_data("https://api.themoviedb.org/3/movie/top_rated").get do |f|
+    response = parse_data('https://api.themoviedb.org/3/movie/top_rated').get do |f|
       f.params['api_key'] = ENV['movie_key']
       f.params['original_language'] = 'en'
       f.params['page'] = page
@@ -17,7 +16,7 @@ class MovieService < ApiService
   end
 
   def movie_search(search)
-    response = parse_data("https://api.themoviedb.org/3/search/movie").get do |f|
+    response = parse_data('https://api.themoviedb.org/3/search/movie').get do |f|
       f.params['api_key'] = ENV['movie_key']
       f.params['original_language'] = 'en'
       f.params['include_adult'] = false

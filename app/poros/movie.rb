@@ -1,5 +1,12 @@
 class Movie
-  attr_reader :id, :title, :description, :rating, :runtime, :genres, :cast, :reviews
+  attr_reader :id,
+              :title,
+              :description,
+              :rating,
+              :runtime,
+              :genres,
+              :cast,
+              :reviews
 
   def initialize(info)
     @id = info[:id]

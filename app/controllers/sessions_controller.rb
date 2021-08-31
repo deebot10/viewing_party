@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome, #{found_user.username}!"
       redirect_to dashboard_user_path(found_user)
     else
-      flash[:failure] = "Credentials were bad. Try again."
+      flash[:failure] = 'Credentials were bad. Try again.'
       redirect_to login_path
     end
   end

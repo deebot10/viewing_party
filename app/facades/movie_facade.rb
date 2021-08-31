@@ -8,14 +8,14 @@ class MovieFacade
   def cast_info(id)
     cast = @service.list_cast_members(id)
     cast.map do |hash|
-      {name: hash[:name], character: hash[:character]}
+      { name: hash[:name], character: hash[:character] }
     end
   end
 
   def review_info(id)
     reviews = @service.list_reviews(id)
     reviews.map do |hash|
-      {author: hash[:author], review: hash[:content]}
+      { author: hash[:author], review: hash[:content] }
     end
   end
 
@@ -25,7 +25,7 @@ class MovieFacade
       original_title: json[:original_title],
       overview: json[:overview],
       vote_average: json[:vote_average],
-      genres: json[:genres].map { |genre| genre[:name]},
+      genres: json[:genres].map { |genre| genre[:name] },
       cast: cast_info(id),
       reviews: review_info(id),
       runtime: json[:runtime],
