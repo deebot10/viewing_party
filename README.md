@@ -20,7 +20,7 @@ This is the base repo for the [viewing party project](https://backend.turing.io/
 
 ## Learning Goals
 
-###Explicit
+### Explicit
 
 Below are technical goals that you should be applying in this project.
 The priority of these goals are demonstrated using a star grading system.
@@ -39,7 +39,7 @@ By the end of this project:
 - Deploy to Heroku ⭐
 - Note: See Learning Goals to see at what level these skills need to be by the final.
 
-###Implicit
+### Implicit
 
 Below are skills that are more general/necessary on the job that are practiced by completing the goals above.
 
