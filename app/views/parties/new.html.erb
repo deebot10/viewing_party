@@ -2,20 +2,20 @@
 
 <h3>Viewing Party Details</h3>
 
-<%= form_with url: user_parties_path(current_user), local: true, method: :post do |form| %>
+<%= form_with url: user_parties_new_path(current_user), local: true, method: :post do |form| %>
   
-  <%= form.hidden_field :title, value: @movie.title %>
-  <%= form.hidden_field :movie_id, value: @movie.id %>
+  <%= form.hidden_field :title, value: params[:movie_title] %>
+  <%= form.hidden_field :movie_id, value: params[:movie_id] %>
   <%= form.hidden_field :user_id, value: current_user.id %>
   <br>
   <%= form.label :title, 'Movie Title'%>
-  <%= form.label :title, @movie.title%>
+  <%= form.label :title, params[:movie_title]%>
   <br>
   <%= form.label :duration, 'Duration of Party' %> 
-  <%= form.number_field :duration, value: @movie.runtime %>
+  <%= form.number_field :duration, value: params[:movie_runtime] %>
   <br> 
-  <%= form.label :day%>
-  <%= form.date_field :day %>
+  <%= form.label :date%>
+  <%= form.date_field :date %>
   <br>
   <%= form.label :start_time, 'Start Time' %>
   <%= form.time_field :start_time %>
