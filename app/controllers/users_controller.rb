@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     new_user = User.create(user)
     if new_user.save
       session[:user_id] = new_user.id
-      flash[:success] = "Sign-up Successful!"
+      flash[:success] = 'Sign-up Successful!'
       redirect_to dashboard_user_path(new_user)
     else
       flash[:failure] = 'Something went horribly wrong!'
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   def dashboard
     @user = User.find(params[:id])
   end
-
 
   private
 

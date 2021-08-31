@@ -1,0 +1,31 @@
+<h1>Welcome <%= current_user.username%>!</h1>
+
+<h3>Viewing Party Details</h3>
+
+<%= form_with url: party_index_path(current_user), local: true, method: :post do |form| %>
+  
+  <%= form.hidden_field :title, value: @movie.title %>
+  <%= form.hidden_field :movie_id, value: @movie.id %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <br>
+  <%= form.label :title, 'Movie Title'%>
+  <%= form.label :title, @movie.title%>
+  <br>
+  <%= form.label :duration, 'Duration of Party' %> 
+  <%= form.number_field :duration, value: @movie.runtime %>
+  <br> 
+  <%= form.label :day%>
+  <%= form.date_field :day %>
+  <br>
+  <%= form.label :start_time, 'Start Time' %>
+  <%= form.time_field :start_time %>
+  <br>
+
+  <h5>Include</h5>
+  <% current_user.friends.each do |friend|%>
+    <%= friend.username%>
+    <%= form.check_box :friend %>
+  <%end%>
+
+  <%= form.submit 'Create Party' %>
+<% end %>
