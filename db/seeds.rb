@@ -14,6 +14,3 @@ user_2.authenticate(user_2.password)
 
 user_3 = User.create!(username: 'dee', email: 'dee@aol.com' , password: 'test')
 user_3.authenticate(user_3.password)
-
-
-
