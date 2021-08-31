@@ -9,6 +9,5 @@ class MoviesController < ApplicationController
 
   def show
     @movie = MovieFacade.new.create_movie(params[:id])
-    require "pry"; binding.pry
   end
 end
