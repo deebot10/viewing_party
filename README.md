@@ -21,6 +21,28 @@ Viewing party is an application in which users can explore movie options and cre
 
 Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party/wireframes)
 
+## Database Schema
+## Overview
+## Learning Goals
+## Tools Used
+
+| Development | Testing       | Gems          |
+|   :----:    |    :----:     |    :----:     |
+| Ruby 2.7.2  | RSpec         | SimpleCov     |
+| Rails       |               | Pry           |
+| HTML5       |               | Capybara      |
+| CSS3        |               | ShouldaMatcher|
+| Github      |               | Launchy       |
+| Atom        |               | Orderly       |
+| VS Code     |               | PostgresQL    |
+|             |               | Postico       |
+|             |               | Faker         |
+|             |               | Factorybot    |
+|             |               | Faraday       |
+|             |               | Figaro        |
+|             |               | Bcrypt        |
+|             |               | VCR           |
+
 ## Contributors
 
 👤  **Dee Hill**
