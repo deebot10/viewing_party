@@ -50,8 +50,6 @@ Below are skills that are more general/necessary on the job that are practiced b
 - Prioritizing goals/user stories
 - Time management
 
-## Overview
-
 ## Local Setup
 
 1. Fork and Clone the repo
@@ -70,25 +68,30 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 ## Database Schema
 ![Screen Shot 2021-08-23 at 7 05 58 PM](https://user-images.githubusercontent.com/77654906/131545833-83efa764-018f-4e9b-9a94-4f67c226d094.png)
 
+## API
+Welcome to version 3 of The Movie Database (TMDB) API. Below you will find a current list of the available methods on our movie, tv, actor and image API. If you need help or support, please head over to our [API Support From](https://www.themoviedb.org/talk/category/5047958519c29526b50017d6)
+
+To register for an API key, click the [API Link](https://www.themoviedb.org/settings/api)  from within your account settings page. You can also view the screenshots below for help:
+ 
 ## Tools Used
 
 | Development | Testing       | Gems          |
 |   :----:    |    :----:     |    :----:     |
 | Ruby 2.7.2  | RSpec         | SimpleCov     |
-| Rails       |               | Pry           |
+| Rails       | Rubocop       | Pry           |
 | HTML5       |               | Capybara      |
 | CSS3        |               | ShouldaMatcher|
 | Github      |               | Launchy       |
 | Atom        |               | Orderly       |
 | VS Code     |               | PostgresQL    |
-|             |               | Postico       |
-|             |               | Faker         |
+| Postman     |               | Postico       |
+| Travis      |               | Faker         |
 |             |               | Factorybot    |
 |             |               | Faraday       |
 |             |               | Figaro        |
 |             |               | Bcrypt        |
 |             |               | VCR           |
-
+|             |               | Bootstrap     |
 ## Contributors
 
 👤  **Dee Hill**

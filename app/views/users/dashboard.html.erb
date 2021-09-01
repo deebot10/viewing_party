@@ -1,4 +1,5 @@
 <h1>Welcome, <%= @user.username%>!</h1>
+
 <%= link_to 'Log Out', logout_path, class: 'btn btn-outline-danger' %>
 
 <%= link_to 'Discover Movies', discover_path, class: 'btn btn-outline-success' %>
@@ -18,4 +19,16 @@
     <%end%>
 <% else%>
   <h5>You currently have no friends</h5>
+<%end%>
+
+<h4>Viewing Parties</h4>
+<% @user.parties.each do |party|%>
+  <h5><%= party.title%></h5>
+  <h5><%= party.date%></h5>
+
+  <% if current_user%>  
+    <h5>Hosting</h5>
+  <%else%>
+    <h5>Invited</h5>
+  <%end%>
 <%end%>

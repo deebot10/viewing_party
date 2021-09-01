@@ -22,9 +22,11 @@
   <br>
 
   <h5>Include</h5>
+
   <% current_user.friends.each do |friend|%>
-    <%= friend.username%>
-    <%= form.check_box :friend %>
+    
+    <%= friend.username %>
+    <%= form.check_box friend.username %>
   <%end%>
 
   <%= form.submit 'Create Party' %>
