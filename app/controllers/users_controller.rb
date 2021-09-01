@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    # require 'pry'; binding.pry
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end

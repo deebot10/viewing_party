@@ -30,14 +30,14 @@ class MovieService < ApiService
     response = parse_data("https://api.themoviedb.org/3/movie/#{movie_id}/credits").get do |f|
       f.params['api_key'] = ENV['movie_key']
     end
-    json = parse_json(response)[:cast][0..9]
+    parse_json(response)[:cast][0..9]
   end
 
   def list_reviews(movie_id)
     response = parse_data("https://api.themoviedb.org/3/movie/#{movie_id}/reviews").get do |f|
       f.params['api_key'] = ENV['movie_key']
     end
-    json = parse_json(response)[:results]
+    parse_json(response)[:results]
   end
 
   def top_40_movies

@@ -1,6 +1,6 @@
 class ApiService
   def parse_data(url)
-    farday = Faraday.new(url)
+    faraday = Faraday.new(url)
   end
 
   def parse_json(response)

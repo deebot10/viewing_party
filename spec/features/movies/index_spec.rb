@@ -21,9 +21,14 @@ RSpec.describe 'Movies index' do
     end
 
     it 'can search for movies' do
+      
+      visit discover_path
 
       fill_in :search, with: 'Fight Club'
       click_on 'Search'
+
+      expect(current_path).to eq(movies_path) 
+      expect(page).to have_button('Fight Club') 
     end
   end
 end
