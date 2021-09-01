@@ -1,27 +1,27 @@
 class PartiesController < ApplicationController
-  def new
-    # @friends = current_user.friends
-    # @movie = MovieFacade.new.create_movie(params[:movie_id])
-  end
+  def new; end
 
   def create
     party = Party.new(party_params)
     movie = MovieFacade.new.create_movie(params[:movie_id])
-    # require 'pry'; binding.pry
     if party.save
-      require 'pry'; binding.pry
-      redirect_to dashboard_user_path(current_user)      
-    else  
+      redirect_to dashboard_user_path(current_user)
+      invite_guests(party)
+    else
       flash[:error] = 'Fields missing'
-      redirect_to user_parties_new_path(current_user)  
+      redirect_to user_parties_new_path(current_user)
     end
   end
 
-  # <%= f.collection_check_boxes(:friend,current_user.followed_users, :follower_id, :find_email) %>
+  def invite_guests(party)
+    current_user.friends.map do |friend|
+      Invitation.create!(user_id: friend.id, party_id: party.id) if params.keys.include?(friend.username)
+    end
+  end
 
   private
 
   def party_params
-    params.permit(:start_time, :duration, :date, :movie_id, :user_id)  
+    params.permit(:start_time, :duration, :date, :movie_id, :user_id, :title)
   end
 end
