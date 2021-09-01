@@ -8,7 +8,7 @@ class PartiesController < ApplicationController
       redirect_to dashboard_user_path(current_user)
       invite_guests(party)
     else
-      flash[:error] = 'Fields missing'
+      flash[:error] = 'Fields Missing'
       redirect_to user_parties_new_path(current_user)
     end
   end

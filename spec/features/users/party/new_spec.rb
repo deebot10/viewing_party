@@ -41,5 +41,16 @@ RSpec.describe 'Viewing Party form' do
 
       expect(current_path).to eq(dashboard_user_path(@user))
     end
+
+    it 'can send a error message' do
+
+      fill_in :duration, with: 102
+      check @user_2.username
+      check @user_3.username 
+      click_on 'Create Party'
+
+      expect(current_path).to eq(user_parties_new_path(@user))
+      expect(page).to have_content('Fields Missing')
+    end
   end
 end
